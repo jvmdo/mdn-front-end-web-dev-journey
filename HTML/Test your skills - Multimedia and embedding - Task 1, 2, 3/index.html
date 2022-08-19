@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Multimedia and embedding</title>
+    <meta charset="UTF-8" />
+
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      video {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p style="color: brown;">
+      ==================== Task 1 ====================
+    </p>
+
+    <h1>Basic audio embed</h1>
+
+    <figure>
+      <figcaption>Audio player:</figcaption>
+
+      <audio src="media/audio.mp3" controls preload>
+        <p>
+          Sorry, your browser does not support embedded audio. Instead, try to
+          <a href="media/audio.mp3" download="guitar-solo">
+            download the MP3 audio file (2.1MB)</a
+          >
+        </p>
+      </audio>
+    </figure>
+
+    <p style="color: brown;">
+      ==================== Task 2 ====================
+    </p>
+
+    <h1>Multisource video embed</h1>
+
+    <figure>
+      <figcaption>Video player:</figcaption>
+
+      <video controls width="320" height="240" muted>
+        <source src="media/rabbit320.webm" type="video/webm" />
+        <source src="media/rabbit320.mp4" type="video/mp4" />
+        <track
+          src="media/subtitles_en.vtt"
+          srclang="en"
+          kind="subtitles"
+          label="English"
+        />
+
+        <p>
+          Sorry, your browser does not support embedded video. Instead, try to
+          <a href="media/rabbit320.mp4" download="rabbit320">
+            download the MP4 video file (777KB)</a
+          >.
+        </p>
+      </video>
+    </figure>
+
+    <p style="color: brown;">
+      ==================== Task 3 ====================
+    </p>
+
+    <object
+      data="media/mypdf.pdf"
+      type="application/pdf"
+      width="500"
+      height="350"
+    >
+      <p>
+        Sorry, your browser does not support embedded PDF. Instead, try to
+        <a href="media/mypdf.pdf" download="yourpdf">
+          download the MP4 video file (555KB)</a
+        >.
+      </p>
+    </object>
+
+    <br /><br />
+
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/omWmWu1XO8U"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </body>
+</html>

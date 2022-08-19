@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Responsive Images</title>
+    <style>
+      html {
+        font-family: sans-serif;
+        background-color: gray;
+      }
+
+      body {
+        width: 100%;
+        max-width: 1176px;
+        margin: 0 auto;
+        background-color: white;
+      }
+
+      header {
+        background: url(header.jpg) no-repeat center;
+        /* height: 468px; */
+        /* clip-path: inset(0px 0px 320px 0px); */
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      p {
+        line-height: 1.5;
+      }
+
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="images/header-cityscape.jpg" alt="Header CityScape" />
+    </header>
+
+    <main>
+      <section>
+        <h1>My website</h1>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget
+          venenatis ligula. Ut lacinia at dolor vitae pulvinar. Aliquam pretium
+          dignissim eros. Integer faucibus, dui non aliquet bibendum, lectus
+          orci lobortis odio, ornare porttitor est tellus eget velit. Nulla eros
+          elit, malesuada id neque vel, viverra vehicula neque. Nullam auctor
+          turpis non leo iaculis finibus. Quisque blandit arcu venenatis libero
+          tempor, ac pulvinar ligula dapibus.
+        </p>
+
+        <picture>
+          <!-- Display the same image, but cropped based on the [media] conditions -->
+          <source
+            media="(max-width: 425px)"
+            srcset="images/cityscape-cropped.png"
+          />
+          <!-- <source media="(min-width: 426px)" srcset="images/cityscape.jpg"> -->
+          <img
+            src="images/cityscape.jpg"
+            alt="Colorful and beautiful cityscape."
+          />
+        </picture>
+
+        <p>
+          Suspendisse potenti. Ut in luctus eros. Mauris pulvinar vehicula
+          aliquet. Etiam imperdiet eleifend luctus. Duis ut justo nec eros
+          ornare consectetur. Vestibulum convallis condimentum varius. Maecenas
+          rutrum porta varius. Phasellus volutpat sem id sagittis luctus. Morbi
+          vitae quam vitae nisi iaculis dignissim.
+        </p>
+
+        <!-- Display the same picture in many different resolutions based on sizes conditions -->
+        <img
+          srcset="images/cityscape-60.jpg 900w, images/cityscape.jpg 1400w"
+          sizes="(max-width: 600px) 900px,
+                    1400px"
+          src="images/cityscape-60.jpg"
+          alt="Colorful and beautiful cityscape."
+        />
+
+        <p>
+          Header image originally by
+          <a
+            href="https://www.hdwallpapers.in/night_city_bw_full_moon_4k_hd-wallpapers.html"
+            >hdwallpapers</a
+          >.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

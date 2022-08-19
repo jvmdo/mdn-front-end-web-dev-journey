@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Embedding your own audio and video</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <h1>The &lt<code>audio</code>&gt element is used to play audio duuuhh</h1>
+    <figure>
+      <figcaption>
+        Your browser's default audio player looks like this:
+      </figcaption>
+      <br />
+      <audio controls autoplay muted loop preload>
+        <source src="audios/viper-ogg.ogg" type="audio/ogg" />
+        <source src="audios/viper-mp3.mp3" type="audio/mp3" />
+        <p>Your browser does not support native audio players</p>
+      </audio>
+    </figure>
+
+    <h1>Behold the &lt<code>video</code>&gt element fury</h1>
+    <figure>
+      <figcaption>
+        Your browser's default video player looks like this:
+      </figcaption>
+      <br />
+      <video
+        controls
+        muted
+        loop
+        preload
+        poster="images/poster.png"
+        width="500"
+        height="500"
+      >
+        <source src="videos/rabbit320-webm.webm" type="video/webm" />
+        <source src="videos/rabbit320-mp4.mp4" type="video/mp4" />
+      </video>
+    </figure>
+  </body>
+</html>
