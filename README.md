@@ -4,3 +4,4 @@ Free course available at [MDN website](https://developer.mozilla.org/en-US/docs/
 ## Directory structure
 Each subdirectory corresponds to a chapter in my learning journey.
   - HTML 
+  - CSS

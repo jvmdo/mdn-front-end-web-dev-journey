@@ -1,0 +1,13 @@
+h1 {
+  font-family: cursive;
+  color: aquamarine;
+  background-color: azure;
+  max-width: 322px;
+  text-align: center;
+}
+
+header {
+  position: absolute;
+  left: 45%;
+  top: 25%;
+}
