@@ -1,3 +1,44 @@
-h1 {
-  color: red;
+/* Element selector */
+p, li {
+  color: green;
+}
+
+li {
+  list-style-type: square;
+}
+
+/* Class selector */
+.special {
+  color: orange;
+  font-weight: bold;
+}
+
+/* Descendant combinator */
+li em {
+  color: rebeccapurple;
+}
+
+/* Adjacent sibling combinator */
+h1 + p {
+  font-size: 200%;
+}
+
+/* State selector */
+a:link {
+  color: rgb(43, 255, 0);
+}
+
+a:visited {
+  color: darkred;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Combining selectors and combinators */
+body h1 + p .special {
+  color: yellow;
+  background-color: black;
+  padding: 5px;
 }
