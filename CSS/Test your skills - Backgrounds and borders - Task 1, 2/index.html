@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Backgrounds and Borders: Task 1</title>
+    <style>
+      :root {
+        --star: url(https://mdn.github.io/css-examples/learn/backgrounds-borders/star.png);
+      }
+
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1.2em / 1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .box1 {
+        border: 5px solid black;
+        border-radius: 10px;
+        background-image: url(https://mdn.github.io/css-examples/learn/backgrounds-borders/balloons.jpg);
+        background-size: cover;
+        padding: 0px 10px;
+      }
+
+      .box1 h2 {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .box2 {
+        width: 300px;
+        padding: 0.5em;
+        border: 5px solid lightblue;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 40px;
+        /* text-align: center;
+        background-image: var(--star), var(--star), var(--star), var(--star);
+        background-repeat: no-repeat;
+        background-position: left 2% center, right 2% center, right 2% top 30%,
+          right 2% bottom 30%; */
+      }
+
+      .box2 h2 {
+        text-align: center;
+        padding: 0 1.5em;
+        background: var(--star) no-repeat left, var(--star) repeat-y right;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p style="font-size: small; color: aqua">
+      ============== Task 1 ==============
+    </p>
+
+    <div class="box1">
+      <h2>Backgrounds &amp; Borders</h2>
+    </div>
+
+    <p style="font-size: small; color: aqua">
+      ============== Task 2 ==============
+    </p>
+
+    <div class="box2">
+      <h2>Background & Borders</h2>
+    </div>
+  </body>
+</html>
