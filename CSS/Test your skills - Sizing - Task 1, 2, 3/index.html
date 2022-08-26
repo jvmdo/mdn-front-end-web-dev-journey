@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sizing Task 1: height and min-height</title>
+
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1.2em / 1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      /* Task 1 */
+      .box1 {
+        border: 5px solid #000;
+        width: 400px;
+        margin-bottom: 1em;
+      }
+
+      .preview {
+        min-height: 400px;
+      }
+
+      .box11 {
+        min-height: 100px;
+      }
+
+      .box12 {
+        height: 100px;
+      }
+
+      /* Task 2 */
+      .box2 {
+        box-sizing: border-box;
+        border: 5px solid #000;
+        width: 400px;
+        margin-bottom: 1em;
+      }
+
+      .inner {
+        width: 60%;
+        padding: 10%;
+        background-color: rebeccapurple;
+        color: white;
+        border-radius: 5px;
+      }
+
+      /* Task 3 */
+      .box3 {
+        border: 5px solid #000;
+        width: 400px;
+        margin-bottom: 1em;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>------------ Task 1 ------------</p>
+
+    <div class="box1 box11">
+      <p>
+        Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh
+        onion daikon amaranth tatsoi tomatillo melon azuki bean garlic. Gumbo
+        beet greens corn soko endive gumbo gourd.
+      </p>
+    </div>
+
+    <div class="box1 box12">
+      <p>
+        Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh
+        onion daikon amaranth tatsoi tomatillo melon azuki bean garlic. Gumbo
+        beet greens corn soko endive gumbo gourd.
+      </p>
+    </div>
+
+    <br />
+    <p>------------ Task 2 ------------</p>
+
+    <div class="box2">
+      <div class="inner">Make me 60% of my parent's width.</div>
+    </div>
+
+    <p>------------ Task 3 ------------</p>
+
+    <div class="box3">
+      <img
+        src="https://raw.githubusercontent.com/mdn/css-examples/main/learn/tasks/sizing/star.png"
+        alt="star"
+      />
+    </div>
+
+    <div class="box3">
+      <img
+        src="https://raw.githubusercontent.com/mdn/css-examples/main/learn/tasks/sizing/balloons.jpg"
+        alt="balloons"
+      />
+    </div>
+  </body>
+</html>
