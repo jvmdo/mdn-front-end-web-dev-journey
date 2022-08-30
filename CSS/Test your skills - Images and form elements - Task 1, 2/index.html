@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Images and forms 1: Tasks</title>
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1.2em / 1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      /* Task 1 */
+      .box {
+        border: 5px solid #000;
+        width: 400px;
+        height: 200px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Task 2 */
+      .preview .myform input {
+        display: inline;
+        margin: 0;
+      }
+
+      .myform {
+        border: 2px solid #000;
+        padding: 5px;
+      }
+
+      input[type="search"],
+      input[type="submit"] {
+        font-family: inherit;
+        font-size: 100%;
+        padding: 10px;
+      }
+
+      input[type="submit"] {
+        background-color: rebeccapurple;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>----------- Task 1 -----------</p>
+
+    <div class="box">
+      <img
+        src="https://raw.githubusercontent.com/mdn/css-examples/main/learn/tasks/images/balloons.jpg"
+        alt="balloons"
+      />
+    </div>
+
+    <p>----------- Task 2 -----------</p>
+
+    <form method="post" action="" class="myform">
+      <div>
+        <label for="fldSearch">Keywords</label>
+        <input type="search" id="fldSearch" name="keywords" />
+        <input type="submit" name="btnSubmit" value="Search" />
+      </div>
+    </form>
+  </body>
+</html>
