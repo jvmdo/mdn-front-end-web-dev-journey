@@ -1,0 +1,166 @@
+/* General setup */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 1000px;
+  max-width: 1400px;
+}
+
+/* Layout */
+
+section {
+  float: left;
+  width: 50%;
+}
+
+aside {
+  float: left;
+  width: 30%;
+}
+
+nav {
+  float: left;
+  width: 20%;
+}
+
+footer {
+  clear: both;
+}
+
+header,
+section,
+aside,
+nav,
+footer {
+  padding: 20px;
+}
+
+/* header and footer */
+
+header,
+footer {
+  border-top: 5px solid #a66;
+  border-bottom: 5px solid #a66;
+}
+
+/* WRITE YOUR CODE BELOW HERE */
+
+html {
+  font-size: 16px;
+  font-family: "Mulish", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+h1,
+h2 {
+  letter-spacing: 0.1rem;
+  font-family: "DM Serif Display", serif;
+}
+
+p,
+a {
+  font-size: 1rem;
+}
+
+p,
+li,
+ul {
+  line-height: 1.75;
+}
+
+p {
+  letter-spacing: 0.025rem;
+  word-spacing: 0.05rem;
+}
+
+section h2 + p {
+  text-indent: 2rem;
+}
+
+a {
+  outline: none;
+  padding: 0.2rem 0.1rem 0rem;
+}
+
+a:link {
+  color: sienna;
+}
+
+a:visited {
+  color: sandybrown;
+}
+
+a:focus {
+  color: saddlebrown;
+  background-color: sandybrown;
+  text-decoration: none;
+  border-radius: 0.25rem;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  color: maroon;
+  background-color: tan;
+}
+
+a[href^="http"] {
+  background-image: url(external-link-52.png);
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position: 100% 50%;
+  padding-right: 1.2rem;
+}
+
+ul {
+  list-style-type: none;
+  list-style-position: outside;
+  padding-left: 2.5rem;
+}
+
+ul li {
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position: 0% 40%;
+  padding-left: 1.5rem;
+}
+
+section ul li {
+  background-image: url(icons8-right-arrow-64.png);
+}
+
+section ol li {
+  list-style-type: lower-greek;
+}
+
+aside ul li {
+  background-image: url(icons8-star-16.png);
+}
+
+nav ul li {
+  display: flex;
+}
+
+nav ul li {
+  padding-left: 0;
+  margin: 1.5em auto;
+}
+
+nav ul a {
+  flex: 1;
+  font-weight: bold;
+  line-height: 3;
+  text-decoration: none;
+  text-align: center;
+  border: 0.2rem solid rgb(247, 218, 180);
+}

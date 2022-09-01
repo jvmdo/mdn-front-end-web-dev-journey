@@ -61,12 +61,12 @@ p {
 
 .card header h2 {
   font-size: 2em;
-  line-height: 1.5em; /* 2em x 1.5 = 3em (height of header) */
+  line-height: 1.5; /* 2em x 1.5 = 3em (height of header) */
 }
 
 .card footer p {
   font-size: 1.5em;
-  line-height: 2em; /* 1.5em x 2 = 3em (height of footer) */
+  line-height: 2; /* 1.5em x 2 = 3em (height of footer) */
 }
 
 /* ==================== */

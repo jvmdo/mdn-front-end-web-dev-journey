@@ -1,0 +1,117 @@
+/* https://www.456bereastreet.com/archive/201012/font-face_tip_define_font-weight_and_font-style_to_keep_your_css_simple/ */
+
+/* "By changing the font-weight and font-style declarations of each 
+@font-face rule to match each font’s properties, and using the same 
+font-family name for each rule, we will no longer need to be overly 
+specific in our CSS" */
+
+@font-face {
+  font-family: "New Rocker";
+  src: url("fonts/newrocker-regular-webfont.woff2") format("woff2"),
+    url("fonts/newrocker-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/opensans-bold-webfont.woff2") format("woff2"),
+    url("fonts/opensans-bold-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/opensans-italic-webfont.woff2") format("woff2"),
+    url("fonts/opensans-italic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/opensans-light-webfont.woff2") format("woff2"),
+    url("fonts/opensans-light-webfont.woff") format("woff");
+  font-weight: light;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/opensans-regular-webfont.woff2") format("woff2"),
+    url("fonts/opensans-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* General setup */
+
+html {
+  font-size: 10px;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+body {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Typography */
+
+.hipster h1,
+h2 {
+  font-family: "New Rocker";
+}
+
+.hipster h1 {
+  font-size: 3.2rem;
+}
+
+.hipster h2 {
+  font-size: 2.4rem;
+}
+
+.hipster p {
+  font-family: "Open Sans";
+  font-size: 1.4rem;
+  line-height: 1.6;
+  word-spacing: 0.6rem;
+}
+
+.hipster p::first-letter {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1.5em;
+}
+
+.hipster p::first-line {
+  font-style: italic;
+}
+
+.mussum {
+  font-family: "Metal Mania";
+}
+
+.mussum h1 {
+  font-size: 3.2rem;
+}
+
+.mussum h2 {
+  font-size: 2.4rem;
+}
+
+.mussum p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  word-spacing: 0.6rem;
+  font-family: initial;
+}
+
+.mussum p::first-letter {
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: "Metal Mania";
+}

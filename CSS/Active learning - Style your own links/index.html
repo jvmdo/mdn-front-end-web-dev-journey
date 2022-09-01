@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Styling my own links</title>
+    <style>
+      body {
+        width: 1200px;
+        font-size: 2em;
+        margin: 10% auto;
+        padding: 10%;
+        font-family: sans-serif;
+        border: 4px solid grey;
+        border-radius: 20px;
+      }
+
+      a {
+        outline: none;
+        text-decoration: none;
+        padding: 2px 1px 0;
+      }
+
+      a:link {
+        color: chocolate;
+      }
+
+      a:visited {
+        color: olive;
+      }
+
+      a:focus {
+        border-bottom: 0.1em dashed;
+        background-color: wheat;
+      }
+
+      a:hover {
+        border-bottom: 0.1em dashed;
+      }
+
+      a:active {
+        color: maroon;
+        background-color: wheat;
+      }
+
+      a[href^="##"] {
+        background: url(https://img.icons8.com/metro/452/external-link.png) no-repeat 100% 50%;
+        background-size: 0.7em;
+        padding-right: 1em;
+      }
+
+      ul {
+        list-style-type: none;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      There are several browsers available out there, such as:
+      <ul>
+        <li><a href="#">Mozilla Firefox</a>, </li>
+        <li><a href="##">Google Chrome</a>, </li>
+        <li><a href="###">Microsoft Edge</a>.</li>
+      </ul>
+    </p>
+  </body>
+</html>
