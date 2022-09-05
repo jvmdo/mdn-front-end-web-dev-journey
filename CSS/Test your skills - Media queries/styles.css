@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font: 1.2em/1.4 Arial, Helvetica, sans-serif;
+}
+
+body {
+  padding: 0 0 1em;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  border: 5px solid #000;
+}
+
+header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 0.5em 1em;
+  border-top: 1px solid #999;
+}
+
+header .title {
+  font-size: 150%;
+  font-style: italic;
+  font-weight: bold;
+  padding: 1em;
+}
+
+main {
+  padding: 0 1em;
+}
+
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards li {
+  border: 5px solid #000;
+  margin-bottom: 1em;
+}
+
+.cards h2 {
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+  padding: 0.5em 1em;
+}
+
+.cards .inner {
+  padding: 0.5em 1em;
+}
+
+.sidebar {
+  background-color: #333;
+  border: 5px solid #000;
+  padding: 0.5em 1em;
+  color: #fff;
+}
+
+/* Solution of mine*/
+
+header nav a:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+/* 25em ==  25 * 16px == 400px */
+@media screen and (min-width: 25em) {
+  /* These rules remain until explicitly changed as */
+  /* expected (768 or 1056 are both greater than 480) */
+  header nav ul {
+    display: flex;
+    text-align: center;
+  }
+
+  header nav li {
+    flex: 1;
+    border-right: 1px solid #999;
+  }
+
+  header nav li:last-child {
+    border: none;
+  }
+}
+
+/* 40em == 40 * 16px == 640px */
+@media screen and (min-width: 40em) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header nav li {
+    border: none;
+  }
+
+  header a {
+    /* display: inline; */
+    padding: 0.5em;
+    border-top: 0;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+    grid-gap: 1em;
+  }
+}
+
+/* Why not??? 60em == 60 * 1.2rem == 60 * 1.2 * 16px == 1152px */
+/* 60em == 60 * 16px == 960px */
+@media screen and (min-width: 60em) {
+  body {
+    margin: 0;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 1em;
+  }
+
+  .sidebar {
+    margin: 1em 0;
+  }
+}
