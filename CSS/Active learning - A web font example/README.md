@@ -4,4 +4,4 @@ Step by Step lesson available at [MDN CSS Guides](https://developer.mozilla.org/
 
 # Live preview
 
-See my tasks results live at [this Glitch]().
+See my tasks results live at [this Glitch](https://titanium-slender-swim.glitch.me/CSS/Active%20learning%20-%20A%20web%20font%20example/).

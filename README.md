@@ -1,14 +1,15 @@
 # MDN Front-End Web Developer Journey
 
-Free course available at [MDN website](https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer)
+Free course available at [MDN website](https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer).
 
 ## Live previews
 
-All I have done during this learning journey can be seen live at [this Glitch](https://titanium-slender-swim.glitch.me/)
+All I have done during this learning journey can be seen live at [this Glitch](https://titanium-slender-swim.glitch.me/).
 
 ## Directory structure
 
-Each subdirectory corresponds to a chapter in my learning journey.
+The subdirectories contains my solutions for exercises I took in all modules of each chapter in MDN's learning journey.
 
-- HTML
-- CSS
+- [HTML](/HTML/) -> [Semantics and structure with HTML](https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer#semantics_and_structure_with_html).
+- [CSS](CSS/) -> [Styling and layout with CSS](https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer#styling_and_layout_with_css)
+- Interactivity with JavaScript

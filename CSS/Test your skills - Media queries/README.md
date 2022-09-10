@@ -6,4 +6,4 @@ Lesson available at [MDN CSS Guides](https://developer.mozilla.org/en-US/docs/Le
 
 # Live preview
 
-See my tasks results live at [this Glitch]().
+See my tasks results live at [this Glitch](https://titanium-slender-swim.glitch.me/CSS/Test%20your%20skills%20-%20Media%20queries/).

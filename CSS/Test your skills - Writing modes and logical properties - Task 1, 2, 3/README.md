@@ -6,4 +6,4 @@ Lesson available at [MDN CSS Guides](https://developer.mozilla.org/en-US/docs/Le
 
 # Live preview
 
-See my tasks results live at [this Glitch]().
+See my tasks results live at [this Glitch](https://titanium-slender-swim.glitch.me/CSS/Test%20your%20skills%20-%20Writing%20modes%20and%20logical%20properties%20-%20Task%201%2C%202%2C%203/).

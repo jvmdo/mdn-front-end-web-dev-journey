@@ -6,4 +6,6 @@ Lesson available at [MDN CSS Guides](https://developer.mozilla.org/en-US/docs/Le
 
 # Live preview
 
-See my tasks results live at [this Glitch]().
+See my tasks results live at [this Glitch](https://titanium-slender-swim.glitch.me/CSS/Test%20your%20skills%20-%20Grid%20-%20Task%201%2C%202%2C%203%2C%204/).
+
+OBS: there are 4 different HTML files. One for each lesson task.
