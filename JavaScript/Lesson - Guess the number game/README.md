@@ -1,6 +1,6 @@
 # Lesson - Guess the number game
 
-Step by Step lesson available at [MDN CSS Guides](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash#example_%E2%80%94_guess_the_number_game).
+Step by Step lesson available at [MDN JavaScript Guides](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash#example_%E2%80%94_guess_the_number_game).
 
 # Live preview
 
