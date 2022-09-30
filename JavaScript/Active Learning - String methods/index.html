@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
+    <title>Active Learning - String methods</title>
+  </head>
+  <body>
+    <h3>(1) Filtering greeting messages</h3>
+    <div class="preview filter">
+      <ul></ul>
+    </div>
+
+    <h3>(2) Fixing capitalization</h3>
+    <div class="preview capital">
+      <ul></ul>
+    </div>
+
+    <h3>(3) Making new string for old ones</h3>
+    <div class="preview making">
+      <ul></ul>
+    </div>
+
+    <script>
+      // (1) Filtering...
+      const list1 = document.querySelector(".preview.filter ul");
+      const greetings = [
+        "Happy Birthday!",
+        "Merry Christmas my love",
+        "A happy Christmas to all the family",
+        "You're all I want for Christmas",
+        "Get well soon",
+      ];
+
+      for (const greeting of greetings) {
+        if (greeting.toLowerCase().includes("christmas")) {
+          const list1Item = document.createElement("li");
+          list1Item.textContent = greeting;
+          list1.appendChild(list1Item);
+        }
+      }
+
+      // (2) Fixing...
+      const list2 = document.querySelector(".preview.capital ul");
+      const cities = ["lonDon", "ManCHESTer", "BiRmiNGHAM", "liVERpoOL"];
+
+      for (const city of cities) {
+        const result = city[0].toUpperCase() + city.substring(1).toLowerCase();
+        const list2Item = document.createElement("li");
+        list2Item.textContent = result;
+        list2.appendChild(list2Item);
+      }
+
+      // (3) Making...
+      const list3 = document.querySelector(".preview.making ul");
+      const stations = [
+        "MAN675847583748sjt567654;Manchester Piccadilly",
+        "GNF576746573fhdg4737dh4;Greenfield",
+        "LIV5hg65hd737456236dch46dg4;Liverpool Lime Street",
+        "SYB4f65hf75f736463;Stalybridge",
+        "HUD5767ghtyfyr4536dh45dg45dg3;Huddersfield",
+      ];
+
+      for (const station of stations) {
+        const code = station.substring(0, 3);
+        const name = station.slice(station.indexOf(";") + 1);
+        const result = `${code}: ${name}`;
+        const list3Item = document.createElement("li");
+        list3Item.textContent = result;
+        list3.appendChild(list3Item);
+      }
+    </script>
+  </body>
+</html>

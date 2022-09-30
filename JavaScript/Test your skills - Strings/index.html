@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Strings: Task 1</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+    <h3>Task 1</h3>
+    <section class="preview task1"></section>
+
+    <h3>Task 2</h3>
+    <section class="preview task2"></section>
+
+    <h3>Task 3</h3>
+    <section class="preview task3"></section>
+
+    <h3>Task 4</h3>
+    <section class="preview task4"></section>
+  </body>
+  <script>
+    // Task 1
+    const quote1Start = "Don't judge each day by the harvest you reap ";
+    const quote1End = "but by the seeds that you plant.";
+    const finalQuote1 = quote1Start + quote1End;
+
+    const task1 = document.querySelector(".preview.task1");
+    const para11 = document.createElement("p");
+    para11.textContent = finalQuote1;
+    task1.appendChild(para11);
+
+    // Task 2
+    const quote =
+      "I do not like green eggs and ham. I do not like them, Sam-I-Am.";
+    const substring = "green eggs and ham";
+    const quoteLength = quote.length;
+    const index = quote.indexOf(substring);
+    const revisedQuote = quote.substring(0, index + substring.length + 1);
+
+    const task2 = document.querySelector(".preview.task2");
+    const para12 = document.createElement("p");
+    para12.textContent = `The quote is ${quoteLength} characters long.`;
+    const para22 = document.createElement("p");
+    para22.textContent = revisedQuote;
+
+    task2.appendChild(para12);
+    task2.appendChild(para22);
+
+    // Task 3
+    const quote2 = "I dO nOT lIke gREen eGgS anD HAM";
+    let fixedQuote2 =
+      quote2.at(0).toUpperCase() + quote2.substring(1).toLowerCase();
+    fixedQuote2 = fixedQuote2.replace(
+      "green eggs and ham",
+      "another food that I really don't like"
+    );
+
+    const finalQuote2 = fixedQuote2 + ".";
+    const task3 = document.querySelector(".preview.task3");
+    const para13 = document.createElement("p");
+    para13.textContent = fixedQuote2;
+
+    task3.appendChild(para13);
+
+    // Task 4
+    const theorem = "Pythagorean theorem";
+    const a = 5;
+    const b = 8;
+
+    const myString = `Using ${theorem}, we can work out that if the two shortest sides of a right-angled triangle have lengths of ${a} and ${b}, the length of the hypotenuse is ${Math.sqrt(
+      a ** 2 + b ** 2
+    ).toFixed(2)}.`;
+
+    const task4 = document.querySelector(".preview.task4");
+    const para14 = document.createElement("p");
+    para14.textContent = myString;
+
+    task4.appendChild(para14);
+  </script>
+</html>
