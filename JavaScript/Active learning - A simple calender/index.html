@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../styles.css" />
+    <title>A simple calender</title>
+  </head>
+  <body>
+    <div class="preview">
+      <h4>Live output</h4>
+      <label for="months-list">Select a month: </label>
+      <select name="Months" id="months-list">
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+      </select>
+      <br />
+      <br />
+      <h1></h1>
+      <ul
+        style="
+          list-style-type: none;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          grid-auto-rows: 30px;
+          gap: 5px;
+          padding: 0;
+        "
+      ></ul>
+    </div>
+
+    <script>
+      const select = document.querySelector("select");
+      const list = document.querySelector("ul");
+      const h1 = document.querySelector("h1");
+
+      select.addEventListener("change", () => {
+        const choice = select.value;
+        let days;
+
+        switch (choice) {
+          case "February":
+            days = 28;
+            break;
+          case "April":
+          case "June":
+          case "September":
+          case "November":
+            days = 30;
+            break;
+          default:
+            days = 31;
+        }
+
+        createCalendar(days, choice);
+      });
+
+      function createCalendar(days, choice) {
+        list.innerHTML = "";
+        h1.textContent = choice;
+        for (let i = 1; i <= days; i++) {
+          const listItem = document.createElement("li");
+          listItem.style = `
+            color: rebeccapurple;
+            background-color: papayawhip;
+            font-size: small;
+          `;
+          listItem.textContent = i;
+          list.appendChild(listItem);
+        }
+      }
+
+      // Initial
+      createCalendar(31, "January");
+    </script>
+  </body>
+</html>

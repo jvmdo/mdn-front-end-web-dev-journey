@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../styles.css" />
+    <title>Active Learning - More colors choices</title>
+  </head>
+  <body>
+    <div class="preview">
+      <h4>Live output</h4>
+      <label for="color-picker">Select theme</label>
+      <select name="Theme" id="color-picker">
+        <option value="white">White</option>
+        <option value="black">Black</option>
+        <option value="yellow">Yellow</option>
+        <option value="purple">Purple</option>
+        <option value="psychedelic">Psychedelic</option>
+      </select>
+      <br />
+      <br />
+      <h1>This is my website</h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi tempora
+        consequatur consequuntur maiores voluptatem mollitia assumenda quae.
+        Suscipit, exercitationem nisi. Facilis dolorem voluptas inventore ea
+        dicta dolores maxime, atque adipisci! Quaerat, temporibus est cupiditate
+        soluta fugit id, delectus ratione atque reprehenderit hic perferendis
+        sequi harum voluptatibus libero cumque explicabo quis nesciunt eaque
+        fuga tempora doloribus adipisci dolor culpa officia! Laudantium?
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium
+        voluptatum earum, voluptatibus officiis maxime nemo voluptas! Iure
+        recusandae, eveniet et veritatis illo, aliquid corporis dolore, soluta
+        laudantium facilis nesciunt tempora! Odit unde nulla dolores labore ea
+        voluptatibus aperiam assumenda ipsum cumque vero? Minima molestiae rem
+        cupiditate explicabo consequatur molestias in, debitis distinctio eius
+        totam laboriosam repellat error assumenda suscipit esse!
+      </p>
+    </div>
+    <script>
+      const select = document.querySelector("select");
+      const html = document.querySelector(".preview");
+
+      select.addEventListener("change", () => {
+        const theme = select.value;
+
+        switch (theme) {
+          case "black":
+            update("#333333", "snow");
+            break;
+          case "white":
+            update("snow", "#333333");
+            break;
+          case "yellow":
+            update("gold", "#333333");
+            break;
+            break;
+          case "purple":
+            update("mediumpurple", "cornsilk");
+            break;
+          case "psychedelic":
+            update("lime", "cyan");
+            break;
+          default:
+            update("azure", "khaki");
+        }
+      });
+
+      function update(bgColor, textColor) {
+        html.style.backgroundColor = bgColor;
+        html.style.color = textColor;
+      }
+
+      // Initial default
+      update("snow", "#333333");
+    </script>
+  </body>
+</html>
