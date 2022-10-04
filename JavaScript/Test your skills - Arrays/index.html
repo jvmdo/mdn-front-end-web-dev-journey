@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Arrays: Task 1</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+    <h3>Task 1</h3>
+    <section class="preview task1"></section>
+
+    <h3>Task 2</h3>
+    <section class="preview task2"></section>
+
+    <h3>Task 3</h3>
+    <section class="preview task3"></section>
+
+    <h3>Task 4</h3>
+    <section class="preview task4"></section>
+  </body>
+  <script>
+    // Task 1
+    const task1Array = [
+      "Slipknot",
+      "Bullet For My Valentine",
+      "Blink-182",
+      "Rise Against",
+      "System of a Down",
+    ];
+
+    task1Array[0] = "The Beginning... So far";
+    task1Array[1] = "The Poison";
+    task1Array.unshift("Trivium");
+
+    const task1 = document.querySelector(".preview.task1");
+    let para11 = document.createElement("p");
+    para11.textContent = `Array: ${task1Array}`;
+
+    task1.appendChild(para11);
+
+    // Task 2
+    let task2String = "Ryu+Ken+Chun-Li+Cammy+Guile+Sakura+Sagat+Juri";
+    const task2Array = task2String.split("+");
+    const arrayLength = task2Array.length;
+    const lastItem = task2Array.at(-1);
+
+    const task2 = document.querySelector(".preview.task2");
+    let para21 = document.createElement("p");
+    para21.textContent = `Array: ${task2Array}`;
+
+    let para22 = document.createElement("p");
+    para22.textContent = `The length of the array is ${arrayLength}.`;
+
+    let para23 = document.createElement("p");
+    para23.textContent = `The last item in the array is "${lastItem}".`;
+
+    task2.appendChild(para21);
+    task2.appendChild(para22);
+    task2.appendChild(para23);
+
+    // Task 3
+    let myArray = [
+      "Ryu",
+      "Ken",
+      "Chun-Li",
+      "Cammy",
+      "Guile",
+      "Sakura",
+      "Sagat",
+      "Juri",
+    ];
+
+    // Go to the last item, remove it, add these other two items after it
+    // in other words, those two items replace the last one
+    myArray.splice(-1, 1, "StreetFight", "Characters?");
+
+    for (const index in myArray) {
+      myArray[index] += ` (${index})`;
+    }
+
+    const myString = myArray.join(" - ");
+    const task3 = document.querySelector(".preview.task3");
+    let para31 = document.createElement("p");
+    para31.textContent = myString;
+    task3.appendChild(para31);
+
+    // Task 4
+    const birds = [
+      "Parrots",
+      "Falcons",
+      "Eagles",
+      "Emus",
+      "Caracaras",
+      "Egrets",
+    ];
+
+    const eaglesIndex = birds.indexOf("Eagles");
+    birds.splice(eaglesIndex, 1);
+
+    const task4 = document.querySelector(".preview.task4");
+
+    const heading41 = document.createElement("h5");
+    const para41 = document.createElement("p");
+    heading41.textContent = "Birds without Eagles:";
+    para41.textContent = `${birds}`;
+    task4.appendChild(heading41);
+    task4.appendChild(para41);
+
+    const eBirds = birds.filter((b) => b.startsWith("E"));
+
+    const heading42 = document.createElement("h5");
+    const para42 = document.createElement("p");
+    heading42.textContent = "e-birds left:";
+    para42.textContent = `${eBirds}`;
+    task4.appendChild(heading42);
+    task4.appendChild(para42);
+  </script>
+</html>
