@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Active Learning - Filling in a Guest list</title>
+  </head>
+  <body>
+    <div class="preview">
+      <p class="admitted"></p>
+      <p class="refused"></p>
+    </div>
+
+    <script>
+      const people = [
+        "Chris",
+        "Anne",
+        "Colin",
+        "Terri",
+        "Phil",
+        "Lola",
+        "Sam",
+        "Kay",
+        "Bruce",
+      ];
+
+      const admitted = document.querySelector(".admitted");
+      const refused = document.querySelector(".refused");
+      admitted.textContent = "Admit: ";
+      refused.textContent = "Refuse: ";
+
+      // loop starts here
+      for (const person of people) {
+        if (person === "Phil" || person === "Lola") {
+          refused.textContent += person + ", ";
+        } else {
+          admitted.textContent += person + ", ";
+        }
+      }
+
+      // Replace the final comma ',' by a period '.'
+      refused.textContent = refused.textContent.slice(0, -2) + ".";
+      admitted.textContent = admitted.textContent.slice(0, -2) + ".";
+    </script>
+  </body>
+</html>

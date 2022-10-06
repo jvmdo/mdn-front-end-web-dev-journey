@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Loops</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+    <div class="playable">
+      <h2>Task 1</h2>
+      <section class="preview task1"></section>
+    </div>
+
+    <div class="playable">
+      <h2>Task 2</h2>
+      <section class="preview task2">
+        <h4>Phonebook</h4>
+      </section>
+    </div>
+
+    <div class="playable">
+      <h2>Task 3</h2>
+      <section class="preview task3"></section>
+    </div>
+  </body>
+  <script>
+    // Task 1
+    const task1 = document.querySelector(".task1");
+    const uiList1 = document.createElement("ul");
+    const shopList = [
+      "tomatoes",
+      "chick peas",
+      "onions",
+      "rice",
+      "black beans",
+    ];
+
+    for (const product of shopList) {
+      const listItem = document.createElement("li");
+      listItem.textContent = product;
+      uiList1.appendChild(listItem);
+    }
+
+    task1.appendChild(uiList1);
+
+    // Task 2
+    const task2 = document.querySelector(".task2");
+    const para21 = document.createElement("p");
+    const uiList2 = document.createElement("ul");
+    const name = "Mustafa";
+
+    const phonebook = [
+      { name: "Chris", number: "1549" },
+      { name: "Li Kang", number: "9634" },
+      { name: "Anne", number: "9065" },
+      { name: "Francesca", number: "3001" },
+      { name: "Mustafa", number: "6888" },
+      { name: "Tina", number: "4312" },
+      { name: "Bert", number: "7780" },
+      { name: "Jada", number: "2282" },
+    ];
+
+    for (const item of phonebook) {
+      const listItem = document.createElement("li");
+      listItem.textContent = `Name: ${item.name} | Number: ${item.number}`;
+      uiList2.appendChild(listItem);
+    }
+
+    for (const person of phonebook) {
+      if (person.name === name) {
+        para21.textContent = `${name}: ${person.number}`;
+        break;
+      }
+    }
+
+    if (!para21.textContent) {
+      para21.textContent = "No person found.";
+    }
+
+    task2.appendChild(uiList2);
+    task2.appendChild(para21);
+
+    // Task 3
+    const task3 = document.querySelector(".task3");
+    const para31 = document.createElement("p");
+
+    function isPrime(num) {
+      for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    for (let n = 500; n >= 2; n--) {
+      if (isPrime(n)) {
+        para31.textContent += n + " ";
+      }
+    }
+
+    task3.appendChild(para31);
+  </script>
+</html>
