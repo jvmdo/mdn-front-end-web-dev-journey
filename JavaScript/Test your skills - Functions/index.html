@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../styles.css" />
+    <title>Test your skills - Functions</title>
+  </head>
+  <body>
+    <div class="playable">
+      <h2>Task 1 + Task 3</h2>
+      <div class="preview task1">
+        <h4>List of names</h4>
+        <ul></ul>
+        <h4>Random chosen name</h4>
+        <p></p>
+      </div>
+    </div>
+
+    <div class="playable">
+      <h2>Task 2</h2>
+      <div class="preview task2">
+        <canvas
+          style="border: 1px solid orange"
+          width="240"
+          height="240"
+        ></canvas>
+      </div>
+    </div>
+
+    <div class="playable">
+      <h2>Task 4</h2>
+      <h4>Filtered names</h4>
+      <div class="preview task4"></div>
+    </div>
+
+    <script>
+      /*
+        Task 1
+      */
+      const task1 = document.querySelector(".task1");
+      const task1List = document.querySelector(".task1 ul");
+      const task1Para = document.querySelector(".task1 p");
+      const names = [
+        "Chris",
+        "Li Kang",
+        "Anne",
+        "Francesca",
+        "Mustafa",
+        "Tina",
+        "Bert",
+        "Jada",
+      ];
+
+      // Function declaration
+      function getRandomIndex(min, max) {
+        // return Math.floor(Math.random() * names.length);
+        return Math.floor(Math.random() * (max - min) + min);
+      }
+
+      // Function expression
+      // Anonymous function + its invocation
+      (function (listOfNames) {
+        task1Para.textContent = listOfNames[getRandomIndex(0, names.length)];
+      })(names);
+
+      // Arrow function
+      names.forEach((name) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = name;
+        task1List.appendChild(listItem);
+      });
+
+      /*
+        Task 2
+      */
+      const task2 = document.querySelector("canvas");
+      const ctx = task2.getContext("2d");
+
+      const x = 50;
+      const y = 75;
+      const width = 125;
+      const height = 150;
+      const color = "blue";
+
+      function drawRectangle() {
+        ctx.clearRect(0, 0, width, height);
+        ctx.beginPath();
+        ctx.rect(x, y, width, height);
+        ctx.fillStyle = color;
+        ctx.fill();
+      }
+
+      drawRectangle();
+
+      /*
+        Task 4
+      */
+      const task4 = document.querySelector(".task4");
+      const task4Para = document.createElement("p");
+
+      const shortNames = names.filter((name) => name.length < 5);
+
+      task4Para.textContent = shortNames;
+      task4.appendChild(task4Para);
+    </script>
+  </body>
+</html>
