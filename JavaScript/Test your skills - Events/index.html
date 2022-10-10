@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../styles.css" />
+    <title>Test your skills - Events</title>
+    <style>
+      button {
+        display: block;
+        margin: 20px 0 20px 20px;
+      }
+
+      .button-bar {
+        padding: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="playable">
+      <h2>Task 1</h2>
+      <div class="preview task1">
+        <button type="button">Machine is off</button>
+      </div>
+    </div>
+
+    <div class="playable">
+      <h2>Task 2</h2>
+      <div class="preview task2">
+        <canvas width="480" height="320" tabindex="0"></canvas>
+      </div>
+    </div>
+
+    <div class="playable">
+      <h2>Task 3</h2>
+      <div class="preview task3">
+        <div class="button-bar">
+          <button data-color="red">Red</button>
+          <button data-color="yellow">Yellow</button>
+          <button data-color="green">Green</button>
+          <button data-color="purple">Purple</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    // Task 1
+    const task1Button = document.querySelector(".task1 button");
+
+    function toggleBtnText(event) {
+      let text = event.target.textContent;
+
+      if (text.includes("off")) {
+        text = text.replace("off", "on");
+      } else {
+        text = text.replace("on", "off");
+      }
+
+      event.target.textContent = text;
+    }
+
+    task1Button.addEventListener("click", toggleBtnText);
+
+    // Task 2
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+
+    function drawCircle(x, y, size) {
+      ctx.fillStyle = "white";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.beginPath();
+      ctx.fillStyle = "black";
+      ctx.arc(x, y, size, 0, 2 * Math.PI);
+      ctx.fill();
+    }
+
+    function moveCircle(event) {
+      const key = event.key;
+      switch (key) {
+        case "a":
+          x -= 5;
+          break;
+        case "d":
+          x += 5;
+          break;
+        case "s":
+          y += 5;
+          break;
+        case "w":
+          y -= 5;
+          break;
+      }
+      drawCircle(x, y, size);
+    }
+
+    let x = 50;
+    let y = 50;
+    const size = 30;
+
+    // Initial circle position
+    drawCircle(x, y, size);
+    // Movement
+    canvas.addEventListener("keydown", moveCircle);
+
+    // Task 3
+    const buttonBar = document.querySelector(".button-bar");
+
+    buttonBar.addEventListener("click", function (event) {
+      const target = event.target;
+      const targetBgColor = event.target.dataset.color;
+      target.style.setProperty("background-color", targetBgColor);
+    });
+
+    // Task 4
+  </script>
+</html>
