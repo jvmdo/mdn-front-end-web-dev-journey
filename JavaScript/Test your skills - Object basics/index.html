@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../styles.css" />
+    <title>Test your skills - Objects basics</title>
+  </head>
+  <body>
+    <div class="playable">
+      <h2>Task 1</h2>
+      <div class="preview task1">
+        <p>Cat name:&nbsp;</p>
+        <p>Cat greetings:&nbsp;</p>
+        <p>Cat color:&nbsp;</p>
+      </div>
+    </div>
+
+    <div class="playable">
+      <h2>Task 2</h2>
+      <div class="preview task2">
+        <h4>Band biography</h4>
+      </div>
+    </div>
+
+    <div class="playable">
+      <h2>Task 3</h2>
+      <div class="preview task3">
+        <p>[Generic] Cat greeting:&nbsp;</p>
+      </div>
+    </div>
+    <script>
+      // Task 1
+      const t1PName = document.querySelector(".task1 p:nth-child(1)");
+      const t1PGreeting = document.querySelector(".task1 p:nth-child(2)");
+      const t1PColor = document.querySelector(".task1 p:nth-child(3)");
+
+      const cat = {
+        name: "Bertie",
+        breed: "Cymric",
+        color: "white",
+        greeting: function () {
+          return "Meow!";
+        },
+      };
+
+      cat.color = "black";
+
+      t1PName.textContent += cat["name"];
+      t1PGreeting.textContent += cat.greeting();
+      t1PColor.textContent += cat.color;
+
+      // Task 2
+      const band = {
+        name: "Bullet For My Valentine",
+        nationality: "País de Gaules",
+        genre: "Metalcore, Emocore",
+        members: 4,
+        formed: 1998,
+        split: false,
+        albums: [
+          {
+            name: "Hand of Blood",
+            released: 2004,
+            toString: function () {
+              return `${this.name}, ${this.released}`;
+            },
+          },
+          {
+            name: "The Poison",
+            released: 2006,
+            toString: function () {
+              return `${this.name}, ${this.released}`;
+            },
+          },
+          {
+            name: "Scream Aim Fire",
+            released: "2008",
+            toString: function () {
+              return `${this.name}, ${this.released}`;
+            },
+          },
+        ],
+        biography: function () {
+          return `${this.name} is a ${this.genre} band from ${
+            this.nationality
+          } formed back in ${this.formed}. The band has ${
+            this.members
+          } members who split in half at 2013, but 2 new members joined. Their 3 first studio albums are ${this.albums.join(
+            "; "
+          )}.`;
+        },
+      };
+
+      const t2Preview = document.querySelector(".task2");
+      const t2P = document.createElement("p");
+
+      t2P.textContent = band.biography();
+      t2Preview.appendChild(t2P);
+
+      // Task 3
+      function Cat(name, breed, color) {
+        this.name = name;
+        this.breed = breed;
+        this.color = color;
+        this.greeting = function () {
+          return `Hello, said ${this.name} the ${this.breed}.`;
+        };
+      }
+
+      const cat2 = new Cat(
+        "Garfield",
+        "Persian Tabby",
+        "Orange with white stripes"
+      );
+
+      const t3PGreeting = document.querySelector(".task3 p");
+      t3PGreeting.textContent += cat2.greeting();
+    </script>
+  </body>
+</html>
