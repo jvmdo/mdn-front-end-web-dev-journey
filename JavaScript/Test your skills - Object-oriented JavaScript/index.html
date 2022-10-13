@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../styles.css" />
+    <title>Test your skills - Object-oriented JavaScript</title>
+  </head>
+  <body>
+    <div class="playable">
+      <h2>Task 1</h2>
+      <div class="preview task1">
+        <p>Square.sideLength == &nbsp;</p>
+        <p>Square.calcPerimeter() == &nbsp;</p>
+        <br />
+        <p>Triangle.sideLength == &nbsp;</p>
+        <p>Triangle.calcPerimeter() == &nbsp;</p>
+      </div>
+    </div>
+
+    <div class="playable">
+      <h2>Task 2</h2>
+      <div class="preview task2">
+        <p>Square.calcPerimeter() == &nbsp;</p>
+        <p>Square.calcArea() == &nbsp;</p>
+      </div>
+    </div>
+    <script>
+      // Task 1
+      class Shape {
+        _name;
+        _sides;
+        sideLength;
+
+        constructor(name, sides, sideLength) {
+          this._name = name;
+          this._sides = sides;
+          this.sideLength = sideLength;
+        }
+
+        calcPerimeter() {
+          return this._sides * this.sideLength;
+        }
+      }
+
+      const square = new Shape("square", 4, 5);
+      const triangle = new Shape("triangle", 3, 3);
+
+      const t1PSquare1 = document.querySelector(".task1 p:nth-of-type(1)");
+      const t1PSquare2 = document.querySelector(".task1 p:nth-of-type(2)");
+      t1PSquare1.textContent += square.sideLength;
+      t1PSquare2.textContent += square.calcPerimeter();
+
+      const t1PTriangle1 = document.querySelector(".task1 p:nth-of-type(3)");
+      const t1PTriangle2 = document.querySelector(".task1 p:nth-of-type(4)");
+      t1PTriangle1.textContent += triangle.sideLength;
+      t1PTriangle2.textContent += triangle.calcPerimeter();
+
+      // Task 2
+      class Square extends Shape {
+        constructor(sideLength) {
+          super("Square", 4, sideLength);
+        }
+
+        calcArea() {
+          return this.sideLength ** 2;
+        }
+      }
+
+      const square2 = new Square(5);
+
+      const t2PSquare1 = document.querySelector(".task2 p:first-of-type");
+      const t2PSquare2 = document.querySelector(".task2 p:last-of-type");
+      t2PSquare1.textContent += square2.calcPerimeter();
+      t2PSquare2.textContent += square2.calcArea();
+    </script>
+  </body>
+</html>
