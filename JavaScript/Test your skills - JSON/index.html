@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>JSON: Task 1</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+    <section class="preview"></section>
+  </body>
+  <script>
+    const section = document.querySelector("section");
+
+    let para1 = document.createElement("p");
+    let para2 = document.createElement("p");
+    let motherInfo = "The mother cats are called ";
+    let kittenInfo;
+    const requestURL =
+      "https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json";
+
+    fetch(requestURL)
+      .then((response) => response.text())
+      .then((text) => displayCatInfo(text));
+
+    function displayCatInfo(catString) {
+      const catObj = JSON.parse(catString);
+
+      motherInfo += catObj
+        .reduce(function (info, cat, index) {
+          if (index != catObj.length - 1) {
+            info += ", " + cat.name;
+          } else {
+            info += " and " + cat.name + ".";
+          }
+          return info;
+        }, "")
+        .slice(1);
+
+      const kittens = catObj
+        .map(({ kittens }) =>
+          kittens.reduce(
+            (kit, sib) =>
+              sib.gender == "m"
+                ? { male: kit.male++, ...kit }
+                : { female: kit.female++, ...kit },
+            { male: 0, female: 0 }
+          )
+        )
+        .reduce(
+          (acc, cur) => ({
+            male: acc.male + cur.male,
+            female: acc.female + cur.female,
+          }),
+          { male: 0, female: 0 }
+        );
+
+      const male = kittens.male;
+      const female = kittens.female;
+      const total = male + female;
+      kittenInfo = `Male: ${male}; female: ${female}; total: ${total}.`;
+
+      para1.textContent = motherInfo;
+      para2.textContent = kittenInfo;
+    }
+
+    section.appendChild(para1);
+    section.appendChild(para2);
+
+    // My solution works but it is quite complex
+    // This one here is much cleaner, specially this line
+    // motherInfo = motherInfo.replace(/,\s(\w+),\s$/, ' and $1.');
+    // https://codepen.io/ithrforu/pen/qBoEzJL?editors=0010
+  </script>
+</html>

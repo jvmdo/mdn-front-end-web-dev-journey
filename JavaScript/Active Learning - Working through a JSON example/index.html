@@ -24,6 +24,13 @@
         const response = await fetch(request);
         const superHeroes = await response.json();
 
+        // JSON string to JS object
+        // const superHeroesText = await response.text();
+        // const superHeroes = JSON.parse(superHeroesText);
+
+        // Back to JSON string
+        // JSON.stringify(superheroes);
+
         populateHeader(superHeroes);
         populateHeroes(superHeroes);
       }
