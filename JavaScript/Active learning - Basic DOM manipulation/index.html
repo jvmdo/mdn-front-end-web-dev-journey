@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple DOM example</title>
+    <style>
+      .highlight {
+        color: snow;
+        background-color: dimgray;
+        padding: 10px;
+        width: 250px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <img
+        src="dinosaur.png"
+        alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth."
+      />
+      <p>
+        Here we will add a link to the
+        <a href="https://www.mozilla.org/">Mozilla homepage</a>
+      </p>
+    </section>
+  </body>
+  <script>
+    const anchor = document.querySelector("a");
+    anchor.textContent = "Mozilla Developer Network";
+    anchor.href = "https://developer.mozilla.org";
+    anchor.title = "Let's go!!!";
+
+    const section = document.querySelector("section");
+    const dynPara = document.createElement("p");
+    dynPara.textContent = "We hope you enjoyed the ride.";
+    section.appendChild(dynPara);
+
+    const aPara = document.querySelector("img + p");
+    const text = document.createTextNode(
+      "' — the premier source for web development knowledge."
+    );
+    aPara.appendChild(text);
+
+    // Move [aPara] to the end of [section]
+    section.appendChild(aPara);
+
+    // Copy then add
+    const anotherDynPara = dynPara.cloneNode(true);
+    anotherDynPara.textContent += " #2";
+    section.appendChild(anotherDynPara);
+
+    // Remove the node based on a reference to itself
+    const dino = document.querySelector("img");
+    // dino.remove();
+    // dino.parentNode.removeChild(dino);
+    // Or based on a reference to its parent
+    section.removeChild(dino);
+
+    // Insert [dino] right before aPara based on the reference to itself
+    // aPara.before(dino);
+    // It is also possible insert based on its parent reference ([section])
+    aPara.parentElement.insertBefore(dino, aPara);
+
+    // Add INLINE styles to an element
+    // aPara.style.color = "snow";
+    // aPara.style.backgroundColor = "dimgrey";
+    // aPara.style.padding = "10px";
+    // aPara.style.width = "250px";
+    // aPara.style.textAlign = "center";
+
+    // Or
+    // const myStyles = `
+    //   color: snow;
+    //   background-color: firebrick;
+    //   margin: 20px;
+    //   border: 2px solid black;
+    // `;
+    // aPara.style.cssText = myStyles;
+
+    // Styles based on CSS classes
+    aPara.setAttribute("class", "highlight");
+  </script>
+</html>
