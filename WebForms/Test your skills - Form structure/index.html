@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Your Skills - Form Structure</title>
+    <link rel="stylesheet" href="./../styles.css" />
+    <style>
+      .task1 input {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <sec class="playable">
+      <h2>Task</h2>
+      <div class="preview task1">
+        <form>
+          <fieldset>
+            <legend>Personal details</legend>
+
+            <p>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" />
+            </p>
+
+            <p>
+              <label for="age">Age:</label>
+              <input type="number" id="age" name="age" />
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Comment information</legend>
+
+            <p>
+              <label for="comment">Comment:</label>
+              <input type="text" id="comment" name="comment" />
+            </p>
+
+            <p>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" />
+            </p>
+          </fieldset>
+        </form>
+      </div>
+    </sec>
+  </body>
+</html>
