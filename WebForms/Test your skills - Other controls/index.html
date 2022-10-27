@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Your Skills - Other Controls</title>
+    <link rel="stylesheet" href="./../styles.css" />
+  </head>
+  <body>
+    <section class="playable">
+      <h2>Task 1</h2>
+      <div class="preview task1">
+        <form>
+          <h3>Enter your comment</h3>
+          <ul>
+            <li>
+              <label for="name">Name:</label>
+              <input type="text" name="name" id="name" />
+            </li>
+            <li>
+              <label for="comment">Comment:</label>
+              <textarea
+                id="comment"
+                rows="10"
+                cols="35"
+                maxlength="100"
+              ></textarea>
+            </li>
+            <li>
+              <button>Submit comment</button>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </section>
+
+    <section class="playable">
+      <h2>Task 2</h2>
+      <div class="preview task2">
+        <form>
+          <ul>
+            <li>
+              <label for="food">Pick your favorite food:</label>
+              <select id="food">
+                <optgroup label="main">
+                  <option>Salad</option>
+                  <option>Curry</option>
+                  <option>Pizza</option>
+                  <option>Fajitas</option>
+                </optgroup>
+                <optgroup label="snacks">
+                  <option>Biscuits</option>
+                  <option>Crisps</option>
+                  <option>Fruit</option>
+                  <option>Breadsticks</option>
+                </optgroup>
+              </select>
+            </li>
+            <li>
+              <button>Submit choice</button>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </section>
+
+    <section class="playable">
+      <h2>Task 3</h2>
+      <div class="preview task3">
+        <form>
+          <ul>
+            <li>
+              <label for="food2">Enter your favorite food:</label>
+              <input type="text" id="food2" list="food-list" />
+              <datalist id="food-list">
+                <option>Salad</option>
+                <option>Curry</option>
+                <option>Pizza</option>
+                <option>Fajitas</option>
+                <option>Biscuits</option>
+                <option>Crisps</option>
+                <option>Fruit</option>
+                <option>Breadsticks</option>
+              </datalist>
+            </li>
+            <li>
+              <button>Submit choice</button>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

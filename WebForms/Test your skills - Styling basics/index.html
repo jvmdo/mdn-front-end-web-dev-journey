@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../styles.css" />
+    <title>Test Your Skills - Styling Basics</title>
+    <style>
+      button,
+      input,
+      select,
+      ul {
+        margin: 0;
+        padding: 0;
+        font: inherit;
+        box-sizing: border-box;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      label {
+        flex: 0 1 150px;
+        text-align: end;
+      }
+
+      input,
+      select {
+        flex: 0 1 250px;
+        border: none;
+        border-bottom: 1px dashed #242424;
+        background: none;
+        outline: none;
+      }
+
+      select {
+        margin-block: 8px;
+      }
+
+      li:nth-child(4) label {
+        padding-right: 8px;
+      }
+
+      button {
+        margin-top: 16px;
+        font-weight: bold;
+        font-size: smaller;
+        padding: 4px 24px;
+        border: none;
+        border-radius: 100vw;
+        background-color: azure;
+        color: #242424;
+        cursor: pointer;
+        transition: font-size 0.5s 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      button:hover {
+        font-size: 120%;
+        border: 1px dashed darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="playable">
+      <h2>Task</h2>
+      <div class="preview">
+        <form>
+          <h3>Edit your preferences</h3>
+          <ul>
+            <li>
+              <label for="e-mail">Email:</label>
+              <input type="email" id="e-mail" name="e-mail" />
+            </li>
+            <li>
+              <label for="website">Website:</label>
+              <input type="url" id="website" name="website" />
+            </li>
+            <li>
+              <label for="phone">Phone number:</label>
+              <input type="tel" id="phone" name="phone" />
+            </li>
+            <li>
+              <label for="food">Favorite food:</label>
+              <select name="food" id="food">
+                <option>Salad</option>
+                <option>Curry</option>
+                <option>Pizza</option>
+                <option>Fajitas</option>
+              </select>
+            </li>
+            <li>
+              <button>Update preferences</button>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
