@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../styles.css" />
+    <title>Test Your Skills - Form Validation</title>
+    <style>
+      /* General */
+      input {
+        outline: none;
+        display: block;
+        margin: 0 !important;
+        width: 50ch;
+        line-height: 1.8;
+      }
+
+      input::placeholder {
+        opacity: 50%;
+      }
+
+      textarea {
+        display: block;
+      }
+
+      li {
+        margin-top: 20px;
+      }
+
+      label {
+        display: inline-block;
+        position: relative;
+      }
+
+      /* Task */
+      label:has(+ input:required)::after {
+        content: "*";
+        position: absolute;
+        right: -8px;
+      }
+
+      input:focus {
+        border: medium ridge slategray;
+      }
+
+      input:focus:invalid + .message::before {
+        content: attr(data-hint);
+        color: lightslategrey;
+        font-size: 0.9em;
+      }
+
+      input:valid:not(:placeholder-shown) {
+        border: medium groove lightseagreen;
+      }
+
+      input:invalid:not(:placeholder-shown, :focus) {
+        background-color: lightsalmon;
+      }
+
+      .accuseInvalidness {
+        border: thick groove crimson;
+        background-color: unset !important;
+      }
+
+      input.accuseInvalidness + .message::before {
+        font-weight: bold;
+      }
+
+      textarea:focus + .message::before {
+        content: attr(data-hint);
+        color: lightslategrey;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="playable">
+      <h2>Task</h2>
+      <div class="preview">
+        <form novalidate>
+          <h3>Enter your support query</h3>
+          <ul>
+            <li>
+              <label for="uname"> User name</label>
+              <input
+                type="text"
+                id="uname"
+                name="Name"
+                placeholder="Your first and last names"
+                pattern="[A-Z][a-z]+ [A-Z][a-z]+"
+                minlength="5"
+                maxlength="20"
+                required
+              />
+              <span
+                class="message"
+                data-hint="$names must be capitalized with $min to $max characters. Current: $cur."
+              >
+                &nbsp;
+              </span>
+            </li>
+            <li>
+              <label for="email">Email address</label>
+              <input
+                type="email"
+                id="email"
+                name="Email"
+                placeholder="example_123@bigcorp.eu"
+                pattern="\w{2}\w*@bigcorp\.eu"
+                required
+              />
+              <span
+                class="message"
+                data-hint="$name must follow the format: $format"
+              >
+                &nbsp;
+              </span>
+            </li>
+            <li>
+              <label for="phone">Phone number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="Phone"
+                pattern="[0-9]{10}|[0-9]{3}[\s\-\.][0-9]{3}[\s\-\.][0-9]{4}"
+                placeholder="1234567890 or 123-456-7890"
+              />
+              <span
+                class="message"
+                data-hint="$name must follow the format: $format"
+              >
+                &nbsp;
+              </span>
+            </li>
+            <li>
+              <label for="comment">Comment</label>
+              <textarea
+                name="Comment"
+                id="comment"
+                cols="42"
+                rows="7"
+                maxlength="200"
+              ></textarea>
+              <span class="message" data-hint="$cur/$max characters.">
+                &nbsp;
+              </span>
+            </li>
+            <li>
+              <button>Submit comment</button>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </section>
+    <script>
+      const form = document.querySelector("form");
+      const name = document.querySelector("input[name='Name']");
+      const nameMessage = document.querySelector(
+        "input[name='Name'] + .message"
+      );
+      const email = document.querySelector("input[name='Email']");
+      const emailMessage = document.querySelector(
+        "input[name='Email'] + .message"
+      );
+      const phone = document.querySelector("input[name='Phone']");
+      const phoneMessage = document.querySelector(
+        "input[name='Phone'] + .message"
+      );
+      const comment = document.querySelector("textarea");
+      const commentMessage = document.querySelector("textarea + .message");
+
+      form.addEventListener("submit", function (event) {
+        !this.checkValidity() && (event.preventDefault(), accuseError());
+      });
+
+      function accuseError() {
+        const invalidInputs = form.querySelectorAll("input:invalid");
+        invalidInputs.forEach((input) =>
+          input.classList.add("accuseInvalidness")
+        );
+      }
+
+      function generateNameMessage() {
+        const hint = nameMessage.dataset.hint;
+        const name = this.name;
+        const min = this.minLength;
+        const max = this.maxLength;
+        const cur = this.value.length;
+        const dataHint = hint
+          .replace("$name", name)
+          .replace("$min", min)
+          .replace("$max", max)
+          .replace(/\$cur.|\d+.$/gi, `${cur}.`);
+        nameMessage.setAttribute("data-hint", dataHint);
+      }
+
+      name.addEventListener("focus", generateNameMessage);
+      name.addEventListener("input", generateNameMessage);
+
+      function generateEmailMessage() {
+        const hint = emailMessage.dataset.hint;
+        const name = this.name;
+        const format = this.placeholder;
+        const dataHint = hint.replace("$name", name).replace("$format", format);
+        emailMessage.setAttribute("data-hint", dataHint);
+      }
+
+      email.addEventListener("focus", generateEmailMessage);
+      email.addEventListener("input", generateEmailMessage);
+
+      function generatePhoneMessage() {
+        const hint = phoneMessage.dataset.hint;
+        const name = this.name;
+        const format = this.placeholder;
+        const dataHint = hint.replace("$name", name).replace("$format", format);
+        phoneMessage.setAttribute("data-hint", dataHint);
+      }
+
+      phone.addEventListener("focus", generatePhoneMessage);
+      phone.addEventListener("input", generatePhoneMessage);
+
+      function generateCommentMessage() {
+        const hint = commentMessage.dataset.hint;
+        const max = this.maxLength;
+        const cur = this.value.length;
+        const dataHint = hint
+          .replace("$max", max)
+          .replace(/\$cur\/|\d+\//gi, `${cur}/`);
+        commentMessage.setAttribute("data-hint", dataHint);
+      }
+
+      comment.addEventListener("focus", generateCommentMessage);
+      comment.addEventListener("input", generateCommentMessage);
+    </script>
+  </body>
+</html>
