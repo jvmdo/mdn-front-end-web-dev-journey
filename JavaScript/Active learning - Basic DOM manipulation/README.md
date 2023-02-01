@@ -4,4 +4,4 @@ Hands-on lesson available at [MDN Learn JavaScript](https://developer.mozilla.or
 
 # Live preview
 
-See what I have done for the lesson live at [this Glitch]().
+See what I have done for the lesson live at [this Glitch](https://titanium-slender-swim.glitch.me/JavaScript/Active%20learning%20-%20Basic%20DOM%20manipulation/).

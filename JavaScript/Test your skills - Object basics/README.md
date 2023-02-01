@@ -4,4 +4,4 @@ Tasks available at [MDN JavaScript test for this lesson](https://developer.mozil
 
 # Live preview
 
-See what I have done for the lesson live at [this Glitch]().
+See what I have done for the lesson live at [this Glitch](https://titanium-slender-swim.glitch.me/JavaScript/Test%20your%20skills%20-%20Object%20basics/).

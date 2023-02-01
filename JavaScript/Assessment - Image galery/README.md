@@ -6,4 +6,4 @@ Module available at [MDN JavaScript Guides](https://developer.mozilla.org/en-US/
 
 # Live preview
 
-See my tasks results live at [this Glitch]().
+See my tasks results live at [this Glitch](https://titanium-slender-swim.glitch.me/JavaScript/Assessment%20-%20Image%20galery/).
